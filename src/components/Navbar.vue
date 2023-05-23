@@ -8,6 +8,7 @@ import LinkedIn from "../assets/img/linked.png";
 import Notion from "../assets/img/letter-n.png";
 
 const navOpen = ref(false);
+let baseUrl = window.location.origin
 const menu = reactive([
   {
     url: "/projects/web",
@@ -89,7 +90,7 @@ const menu = reactive([
           <ul class="navbar-nav">
             <li class="nav-item">
               <a
-                href="/projects/web"
+                :href="baseUrl + '/projects/web'"
                 class="menu-item me-2 letter-space-1 text-uppercase"
                 >Projets webs</a
               >
