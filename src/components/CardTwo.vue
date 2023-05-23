@@ -22,10 +22,11 @@ const stopVideo = () => {
           :src="props.project[0].video"
           @mouseleave="stopVideo"
           @mouseover="playVideo"
-          class="cursor h-100"
+          class="cursor h-100 is-large"
           style="max-width: 100%; border-radius: 10px"
           muted
         />
+        <img :src="props.project[0].img" class="is-small-screen" style="max-width: 100%; border-radius: 10px" />
       </div>
       <div class="col-md-12">
         <div class="card-body p-0">

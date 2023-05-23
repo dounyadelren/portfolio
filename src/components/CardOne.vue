@@ -23,9 +23,10 @@ const stopVideo = () => {
           :src="props.project[0].video"
           @mouseover="playVideo"
           @mouseleave="stopVideo"
-          class="cursor h-100"
+          class="cursor h-100 is-large"
           muted
         />
+        <img :src="props.project[0].img" class="is-small-screen" style="max-width: 100%; border-radius: 10px" />
       </div>
       <div class="col-md-1 col-sm-1"></div>
       <div class="col-md-5 col-sm-12">
