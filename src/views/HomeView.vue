@@ -77,7 +77,7 @@ const handleSuccess = () => {
           <div class="bg-blob"></div>
         </div>
       </div>
-      <div class="row mt-2 custom-bg">
+      <!-- <div class="row mt-2 custom-bg">
         <div class="col-lg-6 col-md-6 col-sm-12 my-auto">
           <h1
             class="font-weight-900 letter-space-0 mb-2 text-gradient text-uppercase"
@@ -85,10 +85,10 @@ const handleSuccess = () => {
             Me contacter
           </h1>
         </div>
-        <!-- <div class="col-sm-6 col-md-6 col-sm-12">
+        <div class="col-sm-6 col-md-6 col-sm-12">
           <Contact id="contact" @success="handleSuccess" />
-        </div> -->
-      </div>
+        </div>
+      </div> -->
     </div>
   </main>
 </template>
