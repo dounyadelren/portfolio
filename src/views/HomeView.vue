@@ -85,9 +85,9 @@ const handleSuccess = () => {
             Me contacter
           </h1>
         </div>
-        <div class="col-sm-6 col-md-6 col-sm-12">
+        <!-- <div class="col-sm-6 col-md-6 col-sm-12">
           <Contact id="contact" @success="handleSuccess" />
-        </div>
+        </div> -->
       </div>
     </div>
   </main>

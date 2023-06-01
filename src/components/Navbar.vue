@@ -20,11 +20,11 @@ const menu = reactive([
     img: Ui,
     name: "Conceptions ui",
   },
-  {
-    url: "/#contact",
-    img: Contact,
-    name: "Contact",
-  },
+  // {
+  //   url: "/#contact",
+  //   img: Contact,
+  //   name: "Contact",
+  // },
   {
     url: "https://github.com/dounyadelren",
     img: Github,
@@ -104,11 +104,11 @@ const menu = reactive([
             >
           </li>
         </div>
-        <div class="d-flex align-items-center is-large">
+        <!-- <div class="d-flex align-items-center is-large">
           <a href="/#contact">
             <button class="contact-btn">Contact</button>
           </a>
-        </div>
+        </div> -->
       </div>
     </nav>
   </div>
