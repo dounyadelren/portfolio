@@ -104,11 +104,11 @@ const menu = reactive([
             >
           </li>
         </div>
-        <!-- <div class="d-flex align-items-center is-large">
-          <a href="/#contact">
+        <div class="d-flex align-items-center is-large">
+          <a href="mailto:derlen.dounya@gmail.com">
             <button class="contact-btn">Contact</button>
           </a>
-        </div> -->
+        </div>
       </div>
     </nav>
   </div>
