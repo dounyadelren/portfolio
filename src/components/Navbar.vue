@@ -20,11 +20,11 @@ const menu = reactive([
     img: Ui,
     name: "Conceptions ui",
   },
-  // {
-  //   url: "/#contact",
-  //   img: Contact,
-  //   name: "Contact",
-  // },
+  {
+    url: "mailto:derlen.dounya@gmail.com",
+    img: Contact,
+    name: "Contact",
+  },
   {
     url: "https://github.com/dounyadelren",
     img: Github,
