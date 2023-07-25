@@ -98,7 +98,7 @@ hr {
   border-width: 1px;
 }
 .container-event {
-  margin-top: -100px;
+  margin-top: -200px;
 }
 
 .alert {

@@ -103,7 +103,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .container-event {
-  margin-top: -100px;
+  margin-top: -200px;
 }
 @media (max-width: 990px) {
   .container-event {

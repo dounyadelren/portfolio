@@ -6,6 +6,8 @@ import Contact from "../assets/img/mail.png";
 import Github from "../assets/img/github.png";
 import LinkedIn from "../assets/img/linked.png";
 import Notion from "../assets/img/letter-n.png";
+import Fr from "../assets/img/fr.png";
+import En from "../assets/img/en.png";
 
 const navOpen = ref(false);
 let baseUrl = window.location.origin
@@ -78,6 +80,8 @@ const menu = reactive([
                       />{{ item.name }}</a
                     >
                   </li>
+                  <li class="sidemenu__item"><a href=""><img :src="Fr" width="20" class="me-3" />Français</a></li>
+                  <li class="sidemenu__item"><a href=""><img :src="En" width="20" class="me-3" />English</a></li>
                 </ul>
               </div>
             </nav>
