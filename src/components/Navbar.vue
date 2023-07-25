@@ -8,9 +8,10 @@ import LinkedIn from "../assets/img/linked.png";
 import Notion from "../assets/img/letter-n.png";
 import Fr from "../assets/img/fr.png";
 import En from "../assets/img/en.png";
+import i18n from "../plugins/i18n";
 
 const navOpen = ref(false);
-let baseUrl = window.location.origin
+let baseUrl = window.location.origin;
 const menu = reactive([
   {
     url: "/projects/web",
@@ -43,6 +44,16 @@ const menu = reactive([
     name: "Notion",
   },
 ]);
+const currentLocale = ref("fr");
+const changeLocale = (locale) => {
+  currentLocale.value = locale;
+  i18n.global.locale = locale;
+  localStorage.setItem("selectedLanguage", locale);
+  const savedLanguage = localStorage.getItem("selectedLanguage");
+  if (savedLanguage) {
+    i18n.global.locale = savedLanguage;
+  }
+};
 </script>
 <template>
   <div>
@@ -80,8 +91,16 @@ const menu = reactive([
                       />{{ item.name }}</a
                     >
                   </li>
-                  <li class="sidemenu__item"><a href=""><img :src="Fr" width="20" class="me-3" />Français</a></li>
-                  <li class="sidemenu__item"><a href=""><img :src="En" width="20" class="me-3" />English</a></li>
+                  <li class="sidemenu__item" @click="changeLocale('fr')">
+                    <a href=""
+                      ><img :src="Fr" width="20" class="me-3" />Français</a
+                    >
+                  </li>
+                  <li class="sidemenu__item" @click="changeLocale('en')">
+                    <a href=""
+                      ><img :src="En" width="20" class="me-3" />English</a
+                    >
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -96,7 +115,7 @@ const menu = reactive([
               <a
                 :href="baseUrl + '/projects/web'"
                 class="menu-item me-2 letter-space-1 text-uppercase"
-                >{{$t('menu.web')}}</a
+                >{{ $t("menu.web") }}</a
               >
             </li>
           </ul>
@@ -104,7 +123,7 @@ const menu = reactive([
             <a
               href="/projects/ui"
               class="menu-item me-2 letter-space-1 text-uppercase"
-              >{{$t('menu.ui')}}</a
+              >{{ $t("menu.ui") }}</a
             >
           </li>
         </div>
