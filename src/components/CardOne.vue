@@ -37,7 +37,7 @@ const stopVideo = () => {
             {{ props.project[0].title }}
           </h5>
           <p class="card-text text-justify line-space">
-            {{ props.project[0].resume }}
+            {{ $t(props.project[0].resume) }}
           </p>
           <div class="row">
             <div class="g-col-12 p-2"></div>
@@ -45,7 +45,7 @@ const stopVideo = () => {
           <div class="row">
             <div class="d-flex justify-content-between">
               <p class="text-muted">
-                {{ props.project[0].techno }}
+                {{ $t('web.implement') + ' ' + props.project[0].techno }}
               </p>
               <a :href="props.project[0].url" target="_blank" class="my-auto"
                 ><button

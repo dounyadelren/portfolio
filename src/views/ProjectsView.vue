@@ -18,9 +18,8 @@ const prevon = reactive([
     background: "var(--lightorange)",
     img: PrevOnPic,
     title: "PREVIOUSLY ON",
-    resume:
-      "Ce projet consistait à reproduire les fonctionnalités du site BetaSeries; i.e. avoir un suivi de ses séries, ses films préférés, avec un aspect réseau social (système d'amis, de récompenses, statistiques partagées etc...) blablablablablabla",
-    techno: "Implémenté en React Js et BetaSeries (api)",
+    resume: "web.prevon",
+    techno: "React Js, BetaSeries (api)",
     btn: "var(--orange)",
     style: "",
     video: PrevOn,
@@ -35,7 +34,7 @@ const camping = reactive([
     title: "CAMPING VS WILD",
     resume:
       "Le but était de créer un RPG avec deux rôles: maître du jeu et joueur. Le maître du jeu peut créer des quêtes, des ennemis, des récompenses et des énigmes auxquels le joueur va se confronter afin de faire évoluer ses personnages.",
-    techno: "Implémenté en Vue JS et Ruby on Rails",
+    techno: "Vue JS, Ruby on Rails",
     btn: "var(--blue)",
     style: "max-height: 293px;object-position:bottom;object-fit: cover",
     video: Camping,
@@ -53,7 +52,7 @@ const pinterest = reactive([
     btn: "var(--purple)",
     style: "max-height: 293px;object-position:bottom;object-fit: cover",
     video: Pinterest,
-    techno: "Implémenté en Symfony et Bootstrap",
+    techno: "Symfony et Bootstrap",
     url: "https://github.com/dounyadelren/Pinterest---PHP-Symfony",
   },
 ]);
@@ -111,14 +110,14 @@ onMounted(() => {
                 alt="quotes"
               />
               <p class="font-light citation">
-                Collaboratrice professionnelle et impliquée
+                {{ $t('web.nicolas') }}
               </p>
               <hr />
               <div
                 class="d-flex justify-content-between text-light text-justify px-2"
               >
                 <p>Nicolas Muhadri</p>
-                <p class="text-end">CEO et fondateur de Streammind</p>
+                <p class="text-end">CEO & {{ $t('web.founder') }}</p>
               </div>
             </div>
           </div>

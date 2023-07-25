@@ -38,13 +38,13 @@ const handleSuccess = () => {
       <div class="row">
         <div class="col-12" style="max-height: 359px">
           <h2 class="font-weight-300 font-25 mb-2 text-dark dancing-script">
-            Hello, je m'appelle Dounya,
+            {{ $t('messages.greetings') }},
           </h2>
           <h1
             class="font-weight-900 letter-space-0 mb-2 text-dark text-uppercase"
           >
             <p>
-              développeuse web<span class="text-gradient"
+              {{$t('messages.dev')}}<span class="text-gradient"
                 ><strong> front-end</strong></span
               >
             </p>
@@ -59,7 +59,7 @@ const handleSuccess = () => {
       <div class="row align-items-center justify-content-around">
         <div class="col-md-3 offset-md-1 col-sm-3 col-xs-12 text-center">
           <a :href="CV" target="_blank" class="text-purple link"
-            ><u>Mon cv 🔥</u></a
+            ><u>{{$t('messages.resume')}} 🔥</u></a
           >
         </div>
         <div class="col-md-3 col-sm-3 col-xs-12 mx-auto">

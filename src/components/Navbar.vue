@@ -92,7 +92,7 @@ const menu = reactive([
               <a
                 :href="baseUrl + '/projects/web'"
                 class="menu-item me-2 letter-space-1 text-uppercase"
-                >Projets webs</a
+                >{{$t('menu.web')}}</a
               >
             </li>
           </ul>
@@ -100,7 +100,7 @@ const menu = reactive([
             <a
               href="/projects/ui"
               class="menu-item me-2 letter-space-1 text-uppercase"
-              >Conceptions UI</a
+              >{{$t('menu.ui')}}</a
             >
           </li>
         </div>

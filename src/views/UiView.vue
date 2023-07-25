@@ -18,8 +18,7 @@ const rocketFeed = reactive([
     image: Feed,
     background: "var(--lightorange)",
     title: "Rocket Feed",
-    resume:
-      "Ce projet est un effort de groupe et aussi une de mes plus grandes fiertés. C'est un agrégateur de news sans redirection vers la source de l'information. Tout y est paramétrable, l'utilisateur peut contrôler le type d'information qu'il voit ainsi que la source. Le plus intéréssant a été l'intégration des réseaux sociaux dans le feed comme Youtube ou Twitter. Sur ce projet je suis l'auteur de la charte graphique ainsi que de l'UX entière. Je l'ai présenté avec un groupe de 5 développeurs en tant que projet de fin d'année.",
+    resume: "web.rocketfeed",
     btn: "var(--orange)",
     style: "",
     url: "https://www.figma.com/file/B81ZnEXPEF6bPfe2jWQWpX/mockup-%F0%9F%94%AD%F0%9F%96%8C?node-id=105%3A444&t=eB7UQnCVZfZpJp4v-1",
@@ -31,8 +30,7 @@ const glass = reactive([
     image: Glass,
     background: "var(--lightblue)",
     title: "Glassmorphisme",
-    resume:
-      "J'ai créé cette landing page en suivant un tutoriel sur Youtube sur le glassmorphisme. C'est un style que j'affectionne particulièrement car beaucoup utilisé notamment chez Apple",
+    resume: "web.glass",
     btn: "var(--blue)",
     style: "max-height: 293px;object-position:bottom;object-fit: cover",
     url: "https://www.figma.com/file/WuIXLwDvEtS3TQwshYcmm2/Glassmorphism?node-id=0%3A1&t=V16mbvKrqdOm6whw-1",
@@ -84,18 +82,18 @@ onMounted(() => {
         </div>
         <div class="col-md-6 col-sm-12 d-flex flex-column text-white my-3">
           <img
-            width="90px"
+            width="90"
             class="quotes"
             src="../assets/img/quotes.svg"
             alt="quotes"
           />
           <p class="font-light citation">
-            Immensément créative et jamais à court d'idées
+            {{  $t('web.coco') }}
           </p>
           <hr />
           <div class="d-flex justify-content-between text-light text-justify px-1">
             <p>Corentin Nordmann</p>
-            <p class="text-end">Développeur web full-stack</p>
+            <p class="text-end">{{ $t('web.fullstack') }}</p>
           </div>
         </div>
       </div>

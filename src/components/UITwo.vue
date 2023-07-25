@@ -13,7 +13,7 @@ const props = defineProps({
             {{ props.project[0].title }}
           </h5>
           <p class="card-text text-justify">
-            {{ props.project[0].resume }}
+            {{ $t(props.project[0].resume) }}
           </p>
           <div class="d-flex justify-content-between">
             <p>
