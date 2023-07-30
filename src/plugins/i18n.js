@@ -41,7 +41,7 @@ const i18n = createI18n({
         'prevon': 'This project consisted in reproducing the functionalities of the BetaSeries website; i.e. having a follow-up on your shows, your favorite films, with a social network aspect (system of friends, rewards, shared statistics, blocked users, notifications, comments etc...)',
         'rocketfeed': 'This project is a group effort and also one of my greatest prides. It is a news aggregator who is not redirecting to the source of the information. Everything is configurable, the user can control the type of information he sees as well as the source. The most interesting part was the integration of social networks in the stream like Youtube or Twitter. On this project, I am the author of the graphic charter as well as the entire UX. I presented it with a group of 5 developers as an end-of-year project and together we got the maximum grade.',
         'glass': 'I created this landing page by following a Youtube tutorial on glassmorphism. It is a style that I particularly fancy because it is used a lot (especially Apple products), due to its sobriety and its ordinary-looking appearance',
-        'coco': 'Immensely creative and never runs out ideas',
+        'coco': 'Immensely creative and never runs out of ideas',
         'fullstack': 'Full stack web developer'
       }
     }
