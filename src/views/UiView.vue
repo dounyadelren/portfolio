@@ -1,9 +1,14 @@
 <script setup>
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, toRefs } from "vue";
 import UIOne from "../components/UIOne.vue";
 import UITwo from "../components/UITwo.vue";
 import Feed from "../assets/img/UI/feed-component.svg";
 import Glass from "../assets/img/UI/glassmorphism.svg";
+import Loader from "../components/Loader.vue";
+import { useLoaderStore } from "../store/loaderStore";
+
+const loaderStore = useLoaderStore();
+const { isLoading } = toRefs(loaderStore);
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -38,67 +43,71 @@ const glass = reactive([
 ]);
 
 onMounted(() => {
+  loaderStore.setLoader();
   scrollToTop();
 });
 </script>
 <template>
-  <main class="container mx-auto row container-event">
-    <Loader />
-    <div class="col-md-12 d-flex justify-content-between align-items-end">
-      <h1 class="font-weight-900">
-        CONCEPTIONS <span class="text-gradient">UI</span>
-      </h1>
-      <div
-        class="bg-light rounded-circle p-3 text-center cursor"
-        style="width: 56px"
-      >
-        <a
-          href="https://teal-tank-ee6.notion.site/Dounya-Derlen-5d813142438f4dbd835380c229432286"
-          class="link"
-          target="_blank"
-          title="Voir ma page Notion"
-          >+</a
+  <main>
+    <Loader v-if="isLoading === true" class="col-12" />
+    <div v-else class="container mx-auto row container-event">
+      <div class="col-md-12 d-flex justify-content-between align-items-end">
+        <h1 class="font-weight-900">
+          CONCEPTIONS <span class="text-gradient">UI</span>
+        </h1>
+        <div
+          class="bg-light rounded-circle p-3 text-center cursor"
+          style="width: 56px"
         >
-      </div>
-    </div>
-    <div class="col-md-12">
-      <hr />
-    </div>
-    <div class="col-md-12">
-      <UIOne :project="rocketFeed" />
-    </div>
-    <div class="col-md-12">
-      <UITwo :project="glass" />
-    </div>
-    <!-- <div class="row mt-2"> -->
-    <div class="col-md-12 bg-purplegradient top-rounded h-100">
-      <div class="row">
-        <div class="col-md-6 col-sm-12 p-5">
-          <img
-            src="../assets/img/thumb.png"
-            alt="thumb avatar"
-            class="avatar"
-          />
+          <a
+            href="https://teal-tank-ee6.notion.site/Dounya-Derlen-5d813142438f4dbd835380c229432286"
+            class="link"
+            target="_blank"
+            title="Voir ma page Notion"
+            >+</a
+          >
         </div>
-        <div class="col-md-6 col-sm-12 d-flex flex-column text-white my-3">
-          <img
-            width="90"
-            class="quotes"
-            src="../assets/img/quotes.svg"
-            alt="quotes"
-          />
-          <p class="font-light citation">
-            {{  $t('web.coco') }}
-          </p>
-          <hr />
-          <div class="d-flex justify-content-between text-light text-justify px-1">
-            <p>Corentin Nordmann</p>
-            <p class="text-end">{{ $t('web.fullstack') }}</p>
+      </div>
+      <div class="col-md-12">
+        <hr />
+      </div>
+      <div class="col-md-12">
+        <UIOne :project="rocketFeed" />
+      </div>
+      <div class="col-md-12">
+        <UITwo :project="glass" />
+      </div>
+      <!-- <div class="row mt-2"> -->
+      <div class="col-md-12 bg-purplegradient top-rounded h-100">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 p-5">
+            <img
+              src="../assets/img/thumb.png"
+              alt="thumb avatar"
+              class="avatar"
+            />
+          </div>
+          <div class="col-md-6 col-sm-12 d-flex flex-column text-white my-3">
+            <img
+              width="90"
+              class="quotes"
+              src="../assets/img/quotes.svg"
+              alt="quotes"
+            />
+            <p class="font-light citation">
+              {{ $t("web.coco") }}
+            </p>
+            <hr />
+            <div
+              class="d-flex justify-content-between text-light text-justify px-1"
+            >
+              <p>Corentin Nordmann</p>
+              <p class="text-end">{{ $t("web.fullstack") }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- </div> -->
   </main>
 </template>
 <style scoped>

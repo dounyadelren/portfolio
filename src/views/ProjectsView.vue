@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, toRefs } from "vue";
 import CardOne from "../components/CardOne.vue";
 import CardTwo from "../components/CardTwo.vue";
 import PrevOn from "../assets/video/prevon.mp4";
@@ -8,6 +8,11 @@ import Camping from "../assets/video/camping.mp4";
 import CampingPic from "../assets/img/camping.png";
 import PinterestPic from "../assets/img/pinterest.jpg";
 import Pinterest from "../assets/video/pinterest.mp4";
+import Loader from "../components/Loader.vue";
+import { useLoaderStore } from "../store/loaderStore";
+
+const loaderStore = useLoaderStore();
+const { isLoading } = toRefs(loaderStore)
 
 const scrollToTop = () => {
   window.scrollTo(0, 0);
@@ -58,12 +63,14 @@ const pinterest = reactive([
 ]);
 
 onMounted(() => {
+  loaderStore.setLoader()
   scrollToTop();
 });
 </script>
 <template>
   <main>
-    <div class="container mx-auto row container-event">
+    <Loader v-if="isLoading === true" class="col-12" />
+    <div v-else class="container mx-auto row container-event">
       <div class="col-md-12 d-flex justify-content-between align-items-end">
         <h1 class="font-weight-900">
           PROJETS <span class="text-gradient">WEBS</span>
