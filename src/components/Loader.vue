@@ -1,17 +1,23 @@
 <script setup></script>
 <template>
-  <div id="loader" class="animate__animated animate__slideInUp">
+  <div id="loader">
+    <img id="logoDD" src="../assets/img/LogoDD.png" />
   </div>
 </template>
 <style scoped>
-#loader {
+html, body, div {
+  cursor: wait;
   width: 100%;
-  min-height: 200vh;
+  height: 100%;
   background: white;
-  position:absolute;
-  top:92px;
   padding: 0;
   margin: 0;
-  z-index: 9999;
+}
+#logoDD {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
 }
 </style>

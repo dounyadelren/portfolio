@@ -1,11 +1,15 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, toRefs } from "vue";
 import CV from "../assets/CV-DOUNYADERLEN-ECV.pdf";
 import Tech from "../components/Figma.vue";
 import Contact from "../components/Contact.vue";
+import Loader from "../components/Loader.vue";
+import { useLoaderStore } from "../store/loaderStore";
+
+const loaderStore = useLoaderStore();
+const { isLoading } = toRefs(loaderStore)
 
 const successMessage = ref("");
-
 const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
@@ -17,78 +21,84 @@ const handleSuccess = () => {
     successMessage.value = "";
   }, 5000);
 };
+
+onMounted(() => {
+  loaderStore.setLoader()
+});
 </script>
 
 <template>
   <main>
-    <div
-      v-if="successMessage"
-      class="alert alert-success text-center d-flex justify-content-center"
-    >
-      <p class="m-0">{{ successMessage }}</p>
-      <img
-        src="../assets/img/check.png"
-        width="25"
-        height="25"
-        class="ms-3"
-        alt="check"
-      />
-    </div>
-    <div class="container mx-auto container-event">
-      <div class="row">
-        <div class="col-12" style="max-height: 359px">
-          <h2 class="font-weight-300 font-25 mb-2 text-dark dancing-script">
-            {{ $t('messages.greetings') }},
-          </h2>
-          <h1
-            class="font-weight-900 letter-space-0 mb-2 text-dark text-uppercase"
-          >
-            <p>
-              {{$t('messages.dev')}}<span class="text-gradient"
-                ><strong> front-end</strong></span
-              >
-            </p>
-            <p>
-              <span class="text-gradient"><strong>UX/UI</strong></span>
-              designer
-            </p>
-          </h1>
-        </div>
+    <Loader v-if="isLoading === true" class="col-12" />
+    <div v-else>
+      <div
+        v-if="successMessage"
+        class="alert alert-success text-center d-flex justify-content-center"
+      >
+        <p class="m-0">{{ successMessage }}</p>
+        <img
+          src="../assets/img/check.png"
+          width="25"
+          height="25"
+          class="ms-3"
+          alt="check"
+        />
       </div>
-      <hr />
-      <div class="row align-items-center justify-content-around">
-        <div class="col-md-3 offset-md-1 col-sm-3 col-xs-12 text-center">
-          <a :href="CV" target="_blank" class="text-purple link"
-            ><u>{{$t('messages.resume')}} 🔥</u></a
+      <div class="container mx-auto container-event">
+        <div class="row">
+          <div class="col-12" style="max-height: 359px">
+            <h2 class="font-weight-300 font-25 mb-2 text-dark dancing-script">
+              {{ $t("messages.greetings") }},
+            </h2>
+            <h1
+              class="font-weight-900 letter-space-0 mb-2 text-dark text-uppercase"
+            >
+              <p>
+                {{ $t("messages.dev")
+                }}<span class="text-gradient"><strong> front-end</strong></span>
+              </p>
+              <p>
+                <span class="text-gradient"><strong>UX/UI</strong></span>
+                designer
+              </p>
+            </h1>
+          </div>
+        </div>
+        <hr />
+        <div class="row align-items-center justify-content-around">
+          <div class="col-md-3 offset-md-1 col-sm-3 col-xs-12 text-center">
+            <a :href="CV" target="_blank" class="text-purple link"
+              ><u>{{ $t("messages.resume") }} 🔥</u></a
+            >
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12 mx-auto">
+            <Tech />
+          </div>
+          <div
+            class="col-md-3 align-items-baseline d-flex col-sm-3 col-xs-12 justify-content-center"
           >
+            <img src="../assets/img/pin.png" id="pin" />
+            <p>Paris</p>
+          </div>
         </div>
-        <div class="col-md-3 col-sm-3 col-xs-12 mx-auto">
-          <Tech />
+        <div class="row">
+          <div class="col-12">
+            <div class="bg-blob"></div>
+          </div>
         </div>
-        <div
-          class="col-md-3 align-items-baseline d-flex col-sm-3 col-xs-12 justify-content-center"
-        >
-          <img src="../assets/img/pin.png" id="pin" />
-          <p>Paris</p>
-        </div>
+        <!-- <div class="row mt-2 custom-bg">
+          <div class="col-lg-6 col-md-6 col-sm-12 my-auto">
+            <h1
+              class="font-weight-900 letter-space-0 mb-2 text-gradient text-uppercase"
+            >
+              Me contacter
+            </h1>
+          </div>
+          <div class="col-sm-6 col-md-6 col-sm-12">
+            <Contact id="contact" @success="handleSuccess" />
+          </div>
+        </div> -->
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="bg-blob"></div>
-        </div>
-      </div>
-      <!-- <div class="row mt-2 custom-bg">
-        <div class="col-lg-6 col-md-6 col-sm-12 my-auto">
-          <h1
-            class="font-weight-900 letter-space-0 mb-2 text-gradient text-uppercase"
-          >
-            Me contacter
-          </h1>
-        </div>
-        <div class="col-sm-6 col-md-6 col-sm-12">
-          <Contact id="contact" @success="handleSuccess" />
-        </div>
-      </div> -->
     </div>
   </main>
 </template>
