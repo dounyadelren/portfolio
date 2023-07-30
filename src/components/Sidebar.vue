@@ -1,8 +1,14 @@
 <script setup>
-import { ref } from "vue";
+import { ref, toRefs } from "vue";
 import i18n from "../plugins/i18n";
+import { useLoaderStore } from "../store/loaderStore";
+
 const currentLocale = ref("fr");
+const loaderStore = useLoaderStore();
+const { isLoading } = toRefs(loaderStore)
+
 const changeLocale = (locale) => {
+  loaderStore.setLoader()
   currentLocale.value = locale;
   i18n.global.locale = locale;
   localStorage.setItem("selectedLanguage", locale);
