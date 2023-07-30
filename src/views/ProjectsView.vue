@@ -95,7 +95,7 @@ onMounted(() => {
       <div class="mt-2 ps-sm-0 mx-sm-0">
         <div class="col-md-12 bg-purplegradient top-rounded h-100">
           <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12 p-5">
               <img
                 src="../assets/img/fist.png"
                 alt="fist avatar"

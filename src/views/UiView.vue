@@ -73,7 +73,7 @@ onMounted(() => {
     <!-- <div class="row mt-2"> -->
     <div class="col-md-12 bg-purplegradient top-rounded h-100">
       <div class="row">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12 p-5">
           <img
             src="../assets/img/thumb.png"
             alt="thumb avatar"
