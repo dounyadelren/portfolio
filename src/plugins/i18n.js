@@ -27,7 +27,7 @@ const i18n = createI18n({
     en: {
       'messages': {
         'greetings': 'Hello, my name is Dounya',
-        'dev': 'Web developer',
+        'dev': 'I am a Web developer',
         'resume': 'My resume'
       },
       "menu": {
