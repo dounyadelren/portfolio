@@ -1,11 +1,16 @@
 <script setup>
 import { onMounted, reactive, toRefs } from "vue";
 import UIOne from "../components/UIOne.vue";
-import UITwo from "../components/UITwo.vue";
 import Feed from "../assets/img/UI/feed-component.svg";
 import Glass from "../assets/img/UI/glassmorphism.svg";
+import Screen from "../assets/img/UI/screen.png";
+import MainPage from "../assets/img/UI/main-page.png";
+import LoginPage from "../assets/img/UI/login-page.png";
+import SignuPage from "../assets/img/UI/signupage.png";
 import Loader from "../components/Loader.vue";
 import { useLoaderStore } from "../store/loaderStore";
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 const loaderStore = useLoaderStore();
 const { isLoading } = toRefs(loaderStore);
@@ -17,6 +22,8 @@ const scrollToTop = () => {
     beahvior: "smooth",
   });
 };
+
+const imageList = [Screen, MainPage, LoginPage, SignuPage];
 
 const rocketFeed = reactive([
   {
@@ -72,10 +79,71 @@ onMounted(() => {
         <hr />
       </div>
       <div class="col-md-12">
-        <UIOne :project="rocketFeed" />
+        <UIOne :project="glass" />
       </div>
       <div class="col-md-12">
-        <UITwo :project="glass" />
+        <hr />
+      </div>
+      <div class="col-md-12">
+        <div class="card border-0 p-3">
+          <div class="row g-0">
+            <div class="card-body p-0">
+              <h5
+                class="card-title font-30 letter-space-1 font-weight-600 my-0 mb-2"
+              >
+                Food App
+              </h5>
+              <div class="d-flex justify-content-between align-items-baseline">
+                <p class="card-text text-justify">{{ $t("web.food") }}</p>
+                <a
+                  href="https://www.figma.com/file/mUkwRRX0Tevl1Yjsrzp5tl/Food-app?type=design&node-id=0%3A1&mode=design&t=ZyDf9Geotw7c9LE7-1"
+                  target="_blank"
+                  ><button
+                    class="rounded-circle border-0 p-1 bg-blue"
+                    title="Visualiser sur Figma"
+                  >
+                    <img
+                      class="p-1 spinning-arrow"
+                      style="height: 30px"
+                      src="../assets/img/figma.svg"
+                    /></button
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-around is-large">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <img :src="Screen" style="max-width: 220px" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <img :src="LoginPage" style="max-width: 220px" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <img :src="SignuPage" style="max-width: 220px" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <img :src="MainPage" style="max-width: 220px" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 is-small-screen">
+        <carousel :items-to-show="1">
+          <slide v-for="slide in imageList" :key="slide">
+            <img :src="slide" width="200" />
+          </slide>
+
+          <template #addons>
+            <navigation />
+            <pagination />
+          </template>
+        </carousel>
+      </div>
+      <div class="col-md-12">
+        <hr />
+      </div>
+      <div class="col-md-12 pb-4">
+        <UIOne :project="rocketFeed" />
       </div>
       <!-- <div class="row mt-2"> -->
       <div class="col-md-12 bg-purplegradient top-rounded h-100">
