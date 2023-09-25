@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, reactive, toRefs } from "vue";
 import UIOne from "../components/UIOne.vue";
-import Feed from "../assets/img/UI/feed-component.svg";
-import Glass from "../assets/img/UI/glassmorphism.svg";
+import Feed from "../assets/img/UI/feed-component.png";
+import Glass from "../assets/img/UI/glassmorphism.png";
 import Screen from "../assets/img/UI/screen.png";
 import MainPage from "../assets/img/UI/main-page.png";
 import LoginPage from "../assets/img/UI/login-page.png";
