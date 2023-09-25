@@ -12,7 +12,7 @@ const props = defineProps({
           :style="
             'background-image:url(' +
             props.project[0].image +
-            ');height:100%;background-repeat:no-repeat;background-size:cover;background-position:top;border-radius:10px'
+            ');height:100%;background-repeat:no-repeat;background-size:cover;background-position:center;'
           "
         ></div>
         <div class="is-small-screen">
