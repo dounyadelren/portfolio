@@ -22,7 +22,7 @@ const props = defineProps({
       <div class="col-lg-4 col-md-12 col-sm-12 ml-4">
         <div class="card-body p-0 ms-4">
           <h5
-            class="card-title font-30 letter-space-1 font-weight-600 my-0 mb-3"
+            class="card-title font-30 font-weight-600 my-0 mb-3"
           >
             {{ props.project[0].title }}
           </h5>
