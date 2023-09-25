@@ -59,7 +59,7 @@ onMounted(() => {
     <Loader v-if="isLoading === true" class="col-12" />
     <div v-else class="container mx-auto row container-event">
       <div class="col-md-12 d-flex justify-content-between align-items-end">
-        <h1 class="font-weight-900">
+        <h1 class="font-weight-900 letter-space-2">
           CONCEPTIONS <span class="text-gradient">UI</span>
         </h1>
         <div
@@ -78,19 +78,17 @@ onMounted(() => {
       <div class="col-md-12">
         <hr />
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 p-0">
         <UIOne :project="glass" />
       </div>
       <div class="col-md-12">
         <hr />
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 p-0">
         <div class="card border-0 p-3">
           <div class="row g-0">
             <div class="card-body p-0">
-              <h5
-                class="card-title font-30 letter-space-1 font-weight-600 my-0 mb-2"
-              >
+              <h5 class="card-title font-30 font-weight-600 my-0 mb-2">
                 Food App
               </h5>
               <div class="d-flex justify-content-between align-items-baseline">
@@ -142,35 +140,36 @@ onMounted(() => {
       <div class="col-md-12">
         <hr />
       </div>
-      <div class="col-md-12 pb-4">
+      <div class="col-md-12 p-0 pb-4">
         <UIOne :project="rocketFeed" />
       </div>
-      <!-- <div class="row mt-2"> -->
-      <div class="col-md-12 bg-purplegradient top-rounded h-100">
-        <div class="row">
-          <div class="col-md-6 col-sm-12 p-5">
-            <img
-              src="../assets/img/thumb.png"
-              alt="thumb avatar"
-              class="avatar"
-            />
-          </div>
-          <div class="col-md-6 col-sm-12 d-flex flex-column text-white my-3">
-            <img
-              width="90"
-              class="quotes"
-              src="../assets/img/quotes.svg"
-              alt="quotes"
-            />
-            <p class="font-light citation">
-              {{ $t("web.coco") }}
-            </p>
-            <hr />
-            <div
-              class="d-flex justify-content-between text-light text-justify px-1"
-            >
-              <p>Corentin Nordmann</p>
-              <p class="text-end">{{ $t("web.fullstack") }}</p>
+      <div class="mt-2 ps-sm-0 mx-sm-0">
+        <div class="col-md-12 bg-purplegradient top-rounded h-100">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 p-5">
+              <img
+                src="../assets/img/thumb.png"
+                alt="thumb avatar"
+                class="avatar"
+              />
+            </div>
+            <div class="col-md-6 col-sm-12 d-flex flex-column text-white my-3">
+              <img
+                width="90"
+                class="quotes"
+                src="../assets/img/quotes.svg"
+                alt="quotes"
+              />
+              <p class="font-light citation">
+                {{ $t("web.coco") }}
+              </p>
+              <hr />
+              <div
+                class="d-flex justify-content-between text-light text-justify px-1"
+              >
+                <p>Corentin Nordmann</p>
+                <p class="text-end">{{ $t("web.fullstack") }}</p>
+              </div>
             </div>
           </div>
         </div>
