@@ -38,7 +38,7 @@ const changeLocale = (locale) => {
         src="../assets/img/linked.png"
     /></a>
     <a
-      href="https://www.notion.so/Dounya-Derlen-5d813142438f4dbd835380c229432286?pvs=4"
+      href="https://dounya-derlen.notion.site/Dounya-Derlen-Resume-7fa6941db63f4a54b2d887830acb701c?pvs=4"
       target="_blank"
       ><img
         class="side-logo mb-3"

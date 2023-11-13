@@ -39,7 +39,7 @@ const menu = reactive([
     name: "LinkedIn",
   },
   {
-    url: "https://www.notion.so/Dounya-Derlen-5d813142438f4dbd835380c229432286?pvs=4",
+    url: "https://dounya-derlen.notion.site/Dounya-Derlen-Resume-7fa6941db63f4a54b2d887830acb701c?pvs=4",
     img: Notion,
     name: "Notion",
   },
